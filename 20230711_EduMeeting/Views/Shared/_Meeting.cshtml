@@ -1,0 +1,27 @@
+﻿@model Meeting
+
+
+<div class="meeting-item">
+    <div class="thumb">
+        <div class="price">
+            <span>@Model.Price</span>
+        </div>
+        <a asp-controller="Meeting" asp-action="Detail" asp-route-name="@GeneralTools.LinkOlustur(Model.Name)" asp-route-id="@Model.ID"><img src="@Model.Picture" alt="@Model.Name"></a>
+    </div>
+    <div class="down-content">
+        <div class="date">
+            <h6>@Model.RecDate.ToString("MMM") <span> @Model.RecDate.Day  </span></h6>
+        </div>
+        <a href="meeting-details.html"><h4>@Model.Name</h4></a>
+        <p>@Model.Description</p>
+
+        @if (Model.Category != null)
+        {
+            <h6>@Model.Category.Name</h6>
+        }
+        else
+        {
+            <h6>Kategori yok</h6>
+        }
+    </div>
+</div>

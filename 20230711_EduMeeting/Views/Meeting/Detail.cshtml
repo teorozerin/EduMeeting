@@ -1,0 +1,41 @@
+﻿@model Meeting
+<section class="heading-page header-text" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>@Model.Name</h6>
+                <h2>@Model.Description</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="meeting-single-item">
+                            <div class="thumb">
+                                <div class="price">
+                                    <span>@Model.Price</span>
+                                </div>
+                                <div class="date">
+                                    <h6>@Model.RecDate.ToString("MMM") <span>@Model.RecDate.Day</span></h6>
+                                </div>
+                                <a href="meeting-details.html"><img src="@Model.Picture" alt="@Model.Name"></a>
+                            </div>
+                            <div class="down-content">
+                                @Html.Raw(Model.Detail )
+                            </div>
+                    <div class="col-lg-12">
+                        <div class="main-button-red">
+                            <a asp-controller="Meeting" asp-action="Index">Tüm Toplantılar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
